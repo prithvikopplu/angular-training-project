@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="plunker" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Trainig Demo Project</title>
+</head>
+<body ng-controller="RecipeController as recipeCtrl">
+<!--
+ng-controoller = attribute to create controller /
+-->
+
+<div>
+    <button ng-click="recipeCtrl.showRecipes()">Show recipes</button>
+    <button ng-click="recipeCtrl.hideRecipes()">Hide recipes</button>
+</div>
+
+<recipe-element
+        recipes = "recipeCtrl.recipes"
+                show-recipes-flag = "recipeCtrl.showRecipesFlag"></recipe-element>
+
+<button ng-click="recipeCtrl.addRecipe()">Add Recipe</button>
+
+<div ng-if="recipeCtrl.showAddRecipeForm">
+    <div>
+        <label>Recipe Name: </label>
+        <input ng-model="recipeCtrl.recipeToBeAdded.name">
+        {{recipeCtrl.recipeToBeAdded.name}}
+    </div>
+    <div>
+        <label>
+            Cooking Time:
+        </label>
+        <input ng-model="recipeCtrl.recipeToBeAdded.cookingTime"/>
+        {{recipeCtrl.recipeToBeAdded.cookingTime}}
+    </div>
+    <div>
+        <button ng-click="recipeCtrl.submitAddRecipeForm()">Submit</button>
+    </div>
+</div>
+
+
+
+<!--<p>
+    {{recipeCtrl.clickedRecipe.name}} , {{recipeCtrl.clickedRecipe.cookingTime}}
+</p>-->
+
+
+<!--
+angular will re-evaluate these expressions for each digest cycle
+-->
+
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="recipe.service.js"></script>
+<script src="recipe.factory.js"></script>
+<script src="recipe.controller.js"></script>
+<script src="recipe.directive.js"></script>
+</body>
+</html>
