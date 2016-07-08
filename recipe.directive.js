@@ -23,7 +23,7 @@ function recipeElement(){
 
         scope: {
             recipes: '=',
-            showRecipesFlag: '='
+            showRecipesFlag: '=' // camel case works here
         }
 
         //isolate scope

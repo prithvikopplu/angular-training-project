@@ -17,6 +17,10 @@ ng-controoller = attribute to create controller /
 <recipe-element
         recipes = "recipeCtrl.recipes"
                 show-recipes-flag = "recipeCtrl.showRecipesFlag"></recipe-element>
+<!--
+show-recipes-flag is in dash case and not camel case
+if we used showCamelCase - it would not work
+-->
 
 <button ng-click="recipeCtrl.addRecipe()">Add Recipe</button>
 
